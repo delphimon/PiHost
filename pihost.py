@@ -36,7 +36,7 @@ Global stuff
 '''
 
  
-interface = "wlan0"
+interface = "en0"
 fingerbank_url = 'https://api.fingerbank.org/api/v2/combinations/interrogate'
 headers = {
     'Content-Type': 'application/json',
@@ -162,7 +162,7 @@ def update_hosts_file(address,hostname,profile):
         new_entry = HostsEntry(entry_type='ipv4', address=address, names=[etchostname])
         hosts.add([new_entry])
         hosts.write()
-        copyfile("hosts", "/etc/hosts")
+        #copyfile("hosts", "/etc/hosts")
 
         print(f"Updated Host name for hostsfile is {etchostname}")
 
